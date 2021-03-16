@@ -1,0 +1,109 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.chat-container{
+    width: 100%;
+    height: 95vw;
+}
+.chat{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    width: 93%;
+    background-color: #eee;
+    border: 2px solid gray;
+    border-radius: 14px;
+    height: 445px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.msg{
+    display: block;
+    margin-left: 16px;
+    margin-top: 14px;
+    text-align: left;
+    width: 75%;
+    padding: 4px;
+    border-radius: 15px;
+}
+.msg .msg-user{
+    display: block;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+.msg .msg-date{
+    display: block;
+    width: 100%;
+    font-size: 0.8em;
+    text-align: right;
+    margin-right: 12px;
+}
+.msg.sender{
+    background-color: pink;
+    box-shadow: 2px 2px #b15285;
+    border: 2px solid #c26f7d;
+}
+.msg.receiver{
+    text-align: left;
+    background-color: lightgreen;
+    box-shadow: 2px 2px #315232;
+    border: 2px solid #5c9c5c;
+}
+.chat-input-container{
+    display: flex;
+    height: 60px;
+    margin-top: 12px;
+    justify-content: center;
+}
+.message-form{
+    outline: none;
+    height: 20px;
+    width: 70%;
+    padding: 6px;
+    font-size: 1.2em;
+    color: white;
+    border-radius: 14px;
+    background-color: #c7b6b6;
+    box-shadow: 2px 2px black;
+    border: 2px solid #383535;
+    transition: all 0.7s;
+}
+.message-form:hover{
+    background-color: #c9e1ec;
+    color: black;
+    box-shadow: 2px 2px #3c5a8a;
+}
+.message-form:focus{
+    background-color: pink;
+    color: black;
+    box-shadow: 2px 2px #b15285;
+    border: 2px solid #c26f7d;
+}
+.btn{
+    outline: none;
+    margin-left: 12px;
+    height: 40px;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.8s;
+}
+.btn-send{
+    width: 20%;
+    background-color: #2cccc4;
+    border: 1px solid #2c837e;
+    box-shadow: 2px 2px #22504e;
+}
+.btn-send:hover{
+    font-size: 1.3em;
+    background-color: #21f1e7;
+    border: 1px solid #037571;
+    box-shadow: 2px 2px #0e504d;
+}
+.btn-send:active{
+    font-size: 1.3em;
+    background-color: #3e83f1;
+    border: 1px solid #274f90;
+    box-shadow: 2px 2px #15315d;
+}
