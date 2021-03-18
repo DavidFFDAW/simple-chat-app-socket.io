@@ -3,6 +3,23 @@ const chat = document.getElementById('chat');
 const inputMsg = document.getElementById('input-message');
 const btnSend = document.getElementById('btn-send');
 
+toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "preventDuplicates": true,
+    "onclick": null,
+    "showDuration": "100",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "show",
+    "hideMethod": "hide"
+};
+
 let username = '';
 Notification.requestPermission().then(permission => console.log(permission));
 
@@ -14,9 +31,15 @@ const askForUsername = () => {
     const usernamePrompt = promptUsername();
     if (usernamePrompt){
         username = usernamePrompt;
+        socket.emit('new-connected',{ user: username });
     } else {
         askForUsername();
     }
+}
+
+
+const toastMessage = (username) => {
+    toastr.info(`${ username } se ha unido al chat! Dadle la bienvenida`);
 }
 
 const notify = () => {
@@ -65,6 +88,7 @@ const addMessageReceiver = (messageInfo) => {
 }
 
 socket.on('joined',_ => alert('Se ha unido un nuevo usuario'));
+socket.on('toast',username => toastMessage(username));
 socket.on('full-room',_ => alert('La sala esta completa'));
 socket.on('message',messageInfo => addMessageReceiver(messageInfo));
 

@@ -1,6 +1,6 @@
 # Simple-Chat-App
 
-### Socket.io
+## Socket.io
 
 Para iniciarlo utiliza:
 
@@ -12,5 +12,10 @@ npm run start:dev
 npm run start:prod
 ```
 
-## author
+## Licencia
+
+Este proyecto está bajo la licencia MIT por lo que el autor no se hace responsable de su uso y el producto se entrega tal y como está.
+
+## Author
+
   *  David Fernandez Flores
